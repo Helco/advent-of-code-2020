@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="day1\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="day1\input.txt" />
+  </ItemGroup>
+
+</Project>

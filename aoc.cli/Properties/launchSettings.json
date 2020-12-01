@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "aoc.cli": {
+      "commandName": "Project",
+      "workingDirectory": "$(SolutionDir)aoc"
+    }
+  }
+}
