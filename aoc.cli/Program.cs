@@ -10,7 +10,7 @@ namespace aoc.cli
     {
         public static void Main(params string[] args)
         {
-            day4.Day4.Run();
+            day5.Day5.Run();
         }
     }
 }
