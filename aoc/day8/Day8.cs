@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace aoc.cli
+namespace aoc.day8
 {
-    static class Program
+    public static class Day8
     {
-        public static void Main(params string[] args)
+        public static void Run()
         {
-            day8.Day8.Run();
+
         }
     }
 }
