@@ -49,6 +49,24 @@ namespace aoc
         public double Angle => Math.Atan2(x, -y);
         public double AngleTo(IVec2 a) => (a - this).Angle;
 
+        public IVec2 LeftOrthogonal => new IVec2(y, -x);
+        public IVec2 RightOrthogonal => new IVec2(-y, x);
+        public IVec2 Rotate90(int degrees)
+        {
+            if (degrees % 90 != 0)
+                throw new ArgumentException("Degrees are not dividable by 90");
+            int rotations = (degrees / 90) % 4;
+            int absRotations = Math.Abs(rotations);
+            return absRotations switch
+            {
+                0 => this,
+                1 => rotations < 0 ? LeftOrthogonal : RightOrthogonal,
+                2 => this * -1,
+                3 => rotations < 0 ? RightOrthogonal : LeftOrthogonal,
+                _ => throw new InvalidProgramException("how?")
+            };
+        }
+
         // ripped from wikipedia
         private int GreatestCommonDivisor(int a, int b)
         {
