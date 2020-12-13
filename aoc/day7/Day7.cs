@@ -107,10 +107,13 @@ namespace aoc.day7
 
         public int GetHashCode(IReadOnlyList<Rule> obj)
         {
-            int hash = unchecked((int)2166136261);
-            foreach (var rule in obj)
-                hash = (hash ^ rule.GetHashCode()) * 16777619;
-            return hash;
+            unchecked
+            {
+                int hash = (int)2166136261;
+                foreach (var rule in obj)
+                    hash = (hash ^ rule.GetHashCode()) * 16777619;
+                return hash;
+            }
         }
     }
 

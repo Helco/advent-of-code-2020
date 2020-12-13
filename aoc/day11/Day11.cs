@@ -113,11 +113,14 @@ namespace aoc.day11
         public override bool Equals(object? obj) => obj is SeatMap ? this == (SeatMap)obj : false;
         public override int GetHashCode()
         {
-            int hash = unchecked((int)2166136261);
-            hash = (hash ^ Size.GetHashCode()) * 16777619;
-            foreach (var seat in Seats)
-                hash = (hash ^ seat.GetHashCode()) * 16777619;
-            return hash;
+            unchecked
+            {
+                int hash = (int)2166136261;
+                hash = (hash ^ Size.GetHashCode()) * 16777619;
+                foreach (var seat in Seats)
+                    hash = (hash ^ seat.GetHashCode()) * 16777619;
+                return hash;
+            }
         }
     }
 

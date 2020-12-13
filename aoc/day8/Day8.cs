@@ -86,11 +86,14 @@ namespace aoc.day8
 
         public int GetHashCode([DisallowNull] State obj)
         {
-            int hash = unchecked((int)2166136261);
-            hash = (hash ^ obj.Program.GetHashCode()) * 16777619;
-            hash = (hash ^ obj.IP.GetHashCode()) * 16777619;
-            hash = (hash ^ obj.Acc.GetHashCode()) * 16777619;
-            return hash;
+            unchecked
+            {
+                int hash = (int)2166136261;
+                hash = (hash ^ obj.Program.GetHashCode()) * 16777619;
+                hash = (hash ^ obj.IP.GetHashCode()) * 16777619;
+                hash = (hash ^ obj.Acc.GetHashCode()) * 16777619;
+                return hash;
+            }
         }
     }
     
@@ -103,10 +106,13 @@ namespace aoc.day8
 
         public int GetHashCode([DisallowNull] State obj)
         {
-            int hash = unchecked((int)2166136261);
-            hash = (hash ^ obj.Program.GetHashCode()) * 16777619;
-            hash = (hash ^ obj.IP.GetHashCode()) * 16777619;
-            return hash;
+            unchecked
+            {
+                int hash = (int)2166136261;
+                hash = (hash ^ obj.Program.GetHashCode()) * 16777619;
+                hash = (hash ^ obj.IP.GetHashCode()) * 16777619;
+                return hash;
+            }
         }
     }
 
