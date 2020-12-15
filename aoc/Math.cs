@@ -47,5 +47,28 @@ namespace aoc
             var phaseC = (-m * periodA + phaseA) % periodC;
             return (phaseC, periodC);
         }
+
+        public static int Count1Bits(long value)
+        {
+            // too lazy to lookup optimized version
+            int count = 0;
+            while (value != 0)
+            {
+                count += (int)(value & 1);
+                value >>= 1;
+            }
+            return count;
+        }
+
+        public static int Log2(long value)
+        {
+            // too lazy to lookup optimized version
+            for (int i = 0; i < 64; i++)
+            {
+                if (value <= (1 << i) - 1)
+                    return i - 1;
+            }
+            throw new InvalidProgramException();
+        }
     }
 }
