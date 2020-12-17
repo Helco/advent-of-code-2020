@@ -10,5 +10,16 @@ namespace aoc.test
 {
     class TestDay17
     {
+        private const string ExampleText = @"
+.#.
+..#
+###";
+
+        [Test]
+        public void Example()
+        {
+            Assert.AreEqual(112, Day17.RunNStates(ExampleText, 6).ActiveCells.Count);
+            Assert.AreEqual(848, Day17.RunNStates4(ExampleText, 6).ActiveCells.Count);
+        }
     }
 }
